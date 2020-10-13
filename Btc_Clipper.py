@@ -2,7 +2,6 @@ from difflib import get_close_matches
 from tkinter import Tk
 import subprocess
 import time
-import sys
 import os
 import re
 #Imports
